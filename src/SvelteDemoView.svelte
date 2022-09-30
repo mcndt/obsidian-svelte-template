@@ -1,4 +1,5 @@
 <script lang="ts">
+	// This is where all our component logic will go
 	import { onMount } from "svelte";
 
 	onMount(() => {

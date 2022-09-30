@@ -17,6 +17,10 @@ export class SvelteDemoView extends ItemView {
 		});
 	}
 
+	async onClose() {
+		this.component.$destroy();
+	}
+
 	/* View abstract method implementations */
 
 	getViewType(): string {
