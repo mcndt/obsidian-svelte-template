@@ -2,8 +2,6 @@
 	// This is where all our component logic will go
 	import { onMount } from "svelte";
 
-	export let title: string;
-
 	let count = 0;
 	let data: { text: string }[] = [{ text: "hello!" }];
 
@@ -25,7 +23,7 @@
 	}
 </script>
 
-<h3>{title}</h3>
+<h3>Svelte Demo View</h3>
 <p>This is a demo view that uses Svelte.</p>
 <hr />
 

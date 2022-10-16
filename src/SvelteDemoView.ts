@@ -14,9 +14,6 @@ export class SvelteDemoView extends ItemView {
 	async onOpen(): Promise<void> {
 		this.component = new SvelteDemoViewComponent({
 			target: this.contentEl,
-			props: {
-				title: "Anything you want!",
-			},
 		});
 	}
 
