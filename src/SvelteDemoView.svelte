@@ -1,6 +1,7 @@
 <script lang="ts">
 	// This is where all our component logic will go
 	import { onMount } from "svelte";
+	import Title from "./Title.svelte";
 
 	export let title: string;
 
@@ -25,7 +26,7 @@
 	}
 </script>
 
-<h3>{title}</h3>
+<Title>{title}</Title>
 <p>This is a demo view that uses Svelte.</p>
 <hr />
 
