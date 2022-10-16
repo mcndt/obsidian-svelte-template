@@ -11,7 +11,9 @@
 		console.log("Hello from Svelte!");
 	});
 
-	function increment() {}
+	function increment() {
+		count += 1;
+	}
 
 	function onAdd() {
 		data = [...data, { text: "new item" }];
