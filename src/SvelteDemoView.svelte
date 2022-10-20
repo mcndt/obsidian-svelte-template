@@ -3,7 +3,7 @@
 	import { onMount } from "svelte";
 
 	let count = 0;
-	let data: { text: string }[] = [{ text: "hello!" }];
+	let data: { text: string }[] = [{ text: "hello!" }, { text: "world!" }];
 
 	onMount(() => {
 		console.log("Hello from Svelte!");
