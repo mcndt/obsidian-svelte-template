@@ -42,7 +42,7 @@ export default class MyPlugin extends Plugin {
 			this.app.vault.on("rename", () => this.writeVaultFilesToStore())
 		);
 
-		// write the vault files to the store
+		// write the vault files to the store on initialization
 		this.writeVaultFilesToStore();
 	}
 
