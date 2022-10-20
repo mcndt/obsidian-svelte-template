@@ -1,5 +1,5 @@
-import { Plugin, WorkspaceLeaf } from 'obsidian';
-import { SvelteDemoView } from 'src/SvelteDemoView';
+import { Plugin, WorkspaceLeaf } from "obsidian";
+import { SvelteDemoView } from "src/SvelteDemoView";
 
 // Remember to rename these classes and interfaces!
 
@@ -8,8 +8,8 @@ interface MyPluginSettings {
 }
 
 const DEFAULT_SETTINGS: MyPluginSettings = {
-	mySetting: 'default'
-}
+	mySetting: "default",
+};
 
 export default class MyPlugin extends Plugin {
 	settings: MyPluginSettings;
@@ -20,8 +20,7 @@ export default class MyPlugin extends Plugin {
 		// Register the svelte demo view
 		this.registerView(
 			SvelteDemoView.viewType,
-			(leaf: WorkspaceLeaf) =>
-				new SvelteDemoView(leaf)
+			(leaf: WorkspaceLeaf) => new SvelteDemoView(leaf)
 		);
 
 		// Add the view to the right sidebar
@@ -35,14 +34,14 @@ export default class MyPlugin extends Plugin {
 	async initLeaf() {
 		this.app.workspace.detachLeavesOfType(SvelteDemoView.viewType);
 
-    await this.app.workspace.getRightLeaf(true).setViewState({
-      type: SvelteDemoView.viewType,
-      active: true,
-    });
+		await this.app.workspace.getRightLeaf(true).setViewState({
+			type: SvelteDemoView.viewType,
+			active: true,
+		});
 
-    this.app.workspace.revealLeaf(
-      this.app.workspace.getLeavesOfType(SvelteDemoView.viewType)[0]
-    );
+		this.app.workspace.revealLeaf(
+			this.app.workspace.getLeavesOfType(SvelteDemoView.viewType)[0]
+		);
 	}
 
 	onunload() {
@@ -57,4 +56,3 @@ export default class MyPlugin extends Plugin {
 		await this.saveData(this.settings);
 	}
 }
-
