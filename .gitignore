@@ -22,3 +22,11 @@ data.json
 .DS_Store
 
 .env
+
+svelte-tutorial-vault/.obsidian/appearance.json
+svelte-tutorial-vault/.obsidian/hotkeys.json
+svelte-tutorial-vault/.obsidian/workspace.json
+
+!svelte-tutorial-vault/.obsidian/plugins/hot-reload/manifest.json
+!svelte-tutorial-vault/.obsidian/plugins/hot-reload/main.js
+!svelte-tutorial-vault/.obsidian/plugins/tutorial-plugin/manifest.json
