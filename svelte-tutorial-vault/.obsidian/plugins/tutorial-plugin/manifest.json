@@ -1,0 +1,10 @@
+{
+	"id": "obsidian-svelte-template",
+	"name": "Svelte Template Plugin",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "This is a sample plugin for Obsidian. This plugin demonstrates the use of Svelte inside Obsidian plugins.",
+	"author": "Maxime Cannoodt (@mcndt)",
+	"authorUrl": "https://mcndt.dev",
+	"isDesktopOnly": false
+}
