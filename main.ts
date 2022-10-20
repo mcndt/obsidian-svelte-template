@@ -1,4 +1,5 @@
 import { Plugin, WorkspaceLeaf } from "obsidian";
+import { fileStore } from "src/stores";
 import { SvelteDemoView } from "src/SvelteDemoView";
 
 // Remember to rename these classes and interfaces!
@@ -29,6 +30,20 @@ export default class MyPlugin extends Plugin {
 		} else {
 			this.app.workspace.onLayoutReady(this.initLeaf.bind(this));
 		}
+
+		// register events
+		this.registerEvent(
+			this.app.vault.on("create", () => this.writeVaultFilesToStore())
+		);
+		this.registerEvent(
+			this.app.vault.on("delete", () => this.writeVaultFilesToStore())
+		);
+		this.registerEvent(
+			this.app.vault.on("rename", () => this.writeVaultFilesToStore())
+		);
+
+		// write the vault files to the store
+		this.writeVaultFilesToStore();
 	}
 
 	async initLeaf() {
@@ -46,6 +61,11 @@ export default class MyPlugin extends Plugin {
 
 	onunload() {
 		this.app.workspace.detachLeavesOfType(SvelteDemoView.viewType);
+	}
+
+	writeVaultFilesToStore() {
+		const files = this.app.vault.getFiles();
+		fileStore.set(files);
 	}
 
 	async loadSettings() {

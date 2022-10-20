@@ -3,6 +3,8 @@
 	import { onMount } from "svelte";
 	import Title from "./Title.svelte";
 
+	import { fileStore } from "src/stores";
+
 	export let title: string;
 
 	let count = 0;
@@ -34,15 +36,15 @@
 
 <hr />
 
-<div class="button-div">
+<!-- <div class="button-div">
 	<button on:click={onAdd}>Add item</button>
 	<button on:click={onRemove}>Remove item</button>
 	<span class="count">{data.length} items</span>
-</div>
+</div> -->
 
 <ul class="list">
-	{#each data as item}
-		<li class="item">{item.text}</li>
+	{#each $fileStore as file}
+		<li class="item">{file.name}</li>
 	{/each}
 </ul>
 
